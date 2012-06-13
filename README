@@ -1,0 +1,20 @@
+Depthsensor
+===========
+
+This repository contains code for a pressure depth sensor, a pump
+controller. It's an academic project created by me during studies,
+however it should work pretty well in the real life.
+
+Purpose
+=======
+
+The main purpose of the project is keeping a constant water level in a
+water tank. It might be used for increasing or decreasing the level of
+water by driving pumps connected to the device. It uses an analog,
+relative air pressure sensor, that detects water level by measuring
+air pressure in a plastic hose immersed in the tank.
+
+Copyright
+=========
+
+Copyright © 2007 Jakub Kuźma

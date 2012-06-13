@@ -64,7 +64,7 @@ void initialize(void)
   // Timer/Counter0 setup for key debouncing
   // Clock0 prescaler = CK/256
   TCCR0 = _BV(CS02);
-  
+
   // Timer/Counter1 setup for blinking
   // Clock1 prescaler = CK/2048
   TCCR1B = _BV(CS13) | _BV(CS12);
@@ -77,14 +77,14 @@ void initialize(void)
 
   // If PROG button is pressed enter to calibration mode
   if(!(PINA & _BV(PROG))) calibrate();
-  
+
   // Read values stored in EEPROM
   eeprom_busy_wait();
   Minimum = eeprom_read_word(PMINIMUM);
   eeprom_busy_wait();
   Maximum = eeprom_read_word(PMAXIMUM);
   Average = (Maximum + Minimum) / 2;
-  
+
   // Check the configuration
   if(
      (Minimum == 0) ||
@@ -157,7 +157,7 @@ void calibrate(void)
 
   eeprom_busy_wait();
   eeprom_write_word(PMAXIMUM, max);
-  
+
   // Timer/Counter0,1 Overflow Interrupt Disable
   TIMSK &= ~_BV(TOIE1);
 }
